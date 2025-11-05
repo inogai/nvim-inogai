@@ -16,7 +16,31 @@ end
 
 ---@param dirname string
 function M.import_dir(dirname)
-  for _, pkg in ipairs(vim.fn.globpath(vim.fn.stdpath("config") .. "/lua/" .. dirname, "*.lua", true, true)) do
+  -- When using wrapRc, we need to search in the runtime path, not stdpath
+  -- The actual config is in the Nix store, accessible via runtimepath
+  local search_paths = vim.api.nvim_list_runtime_paths()
+  local found_paths = {}
+
+  -- Find all paths that contain the directory
+  for _, rtp in ipairs(search_paths) do
+    local lua_dir = rtp .. "/lua/" .. dirname
+    local files = vim.fn.globpath(lua_dir, "*.lua", true, true)
+    if #files > 0 then
+      table.insert(found_paths, { path = lua_dir, files = files })
+    end
+  end
+
+  -- Notify if multiple or no paths found
+  if #found_paths == 0 then
+    vim.notify("No files found in lua/" .. dirname, vim.log.levels.WARN)
+    return
+  elseif #found_paths > 1 then
+    local paths = vim.tbl_map(function(p) return p.path end, found_paths)
+    vim.notify("Multiple paths found for lua/" .. dirname .. ":\n" .. table.concat(paths, "\n"), vim.log.levels.WARN)
+  end
+
+  -- Load modules from the first found path only
+  for _, pkg in ipairs(found_paths[1].files) do
     local module_name = pkg:match("lua/" .. dirname .. "/(.*)%.lua$")
     if module_name then
       require(dirname .. "." .. module_name)
