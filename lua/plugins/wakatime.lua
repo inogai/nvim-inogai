@@ -1,0 +1,1 @@
+U.packadd "vim-wakatime"

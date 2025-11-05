@@ -259,7 +259,7 @@
         settings = {
           suffix-path = true;
           suffix-LD = true;
-          wrapRc = false;
+          wrapRc = true;
           # IMPORTANT:
           # your alias may not conflict with your other packages.
           # aliases = ["vim"];
