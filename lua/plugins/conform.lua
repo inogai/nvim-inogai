@@ -31,6 +31,6 @@ require("conform").setup {
     lsp_format = 'fallback',
   },
 
-  formatters_by_ft = vim.g.conform_formatters_by_ft
+  formatters_by_ft = U.get_conform_formatters()
 }
 configureAutoformat()

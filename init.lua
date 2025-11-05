@@ -16,8 +16,6 @@ require "nvim-treesitter.configs".setup {
   indent = { enable = true, disable = { 'ruby', 'css' } },
 }
 
-vim.g.conform_formatters_by_ft = {}
-
 
 
 U.autocmd("VimEnter", {

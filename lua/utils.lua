@@ -78,6 +78,25 @@ function M.blink_add_source(name, opts)
   end)
 end
 
+local conform_loaded = false
+-- Store formatters before conform setup
+local conform_formatters = {}
+
+---@param ft string
+---@param formatters table
+function M.set_formatter(ft, formatters)
+  if conform_loaded then
+    vim.notify("Formatter " .. ft .. " attempted to set after conform loaded.", vim.log.levels.WARN)
+    return
+  end
+  conform_formatters[ft] = formatters
+end
+
+---@return table
+function M.get_conform_formatters()
+  return conform_formatters
+end
+
 M.autocmd = vim.api.nvim_create_autocmd
 
 return M

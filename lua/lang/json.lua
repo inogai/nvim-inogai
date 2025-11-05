@@ -1,4 +1,4 @@
-vim.g.conform_formatters_by_ft['json'] = { 'prettierd' }
+U.set_formatter('json', { 'prettierd' })
 
 vim.lsp.enable('jsonls')
 vim.lsp.config('jsonls', {
