@@ -1,3 +1,5 @@
+vim.g.conform_formatters_by_ft['markdown'] = { "prettierd" }
+
 U.autocmd('Filetype', {
   pattern = 'markdown',
   callback = function()
