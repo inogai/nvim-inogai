@@ -105,39 +105,43 @@
       # at RUN TIME for plugins. Will be available to PATH within neovim terminal
       # this includes LSPs
       lspsAndRuntimeDeps = {
-        general = with pkgs; [
-          # General CLI deps
-          coreutils
-          fd
-          fzf
-          git
+        general =
+          (with pkgs; [
+            # General CLI deps
+            coreutils
+            fd
+            fzf
+            git
 
-          # Node.js
-          nodePackages.nodejs
-          nodePackages.neovim
+            # Node.js
+            nodePackages.nodejs
+            nodePackages.neovim
 
-          # Lua
-          lua-language-server
+            # Lua
+            lua-language-server
 
-          # markdown
-          markdownlint-cli2
+            # markdown
+            markdownlint-cli2
 
-          # scala
-          metals
+            # scala
+            metals
 
-          # nix
-          nil
-          alejandra
+            # nix
+            nil
+            alejandra
 
-          # frontend
-          eslint_d
-          prettierd
-          prettier
-          astro-language-server
+            # frontend
+            eslint_d
+            prettierd
+            prettier
+            astro-language-server
 
-          # LaTeX
-          tectonic
-        ];
+            # LaTeX
+            tectonic
+          ])
+          ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
+            winterm-rs
+          ]);
       };
 
       # This is for plugins that will load at startup without using packadd:

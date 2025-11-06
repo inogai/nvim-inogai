@@ -45,7 +45,7 @@ local dashboard = {
       pane = 1,
       {
         section = 'terminal',
-        cmd = "nix run ~/flakes/winterm-rs/",
+        cmd = "winterm-rs",
         height = 18,
         width = 40,
         padding = 1,
