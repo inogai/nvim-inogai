@@ -21,6 +21,11 @@
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     inogai.url = "github:inogai/nur-packages";
 
+    "plugins-indent-rainbowline.nvim" = {
+      url = "github:TheGLander/indent-rainbowline.nvim";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -68,11 +73,14 @@
     dependencyOverlays =
       # (import ./overlays inputs) ++
       [
-        # This overlay grabs all the inputs named in the format
-        # `plugins-<pluginName>`
-        # Once we add this overlay to our nixpkgs, we are able to
-        # use `pkgs.neovimPlugins`, which is a set of our plugins.
-        (utils.standardPluginOverlay inputs)
+        # This overlay sanitizes the '.' in package names to '-',
+        # allowing plugins to be referenced in Neovim as :packadd indent-rainbowline-nvim
+        # while using `pkgs.neovimPlugins.indent-rainbowline-nvim`.
+        # See :h nixCats.flake.input
+        (utils.sanitizedPluginOverlay inputs)
+        # alternative
+        # (utils.standardPluginOverlay inputs)
+
         # add any other flake overlays here.
 
         # when other people mess up their overlays by wrapping them with system,
@@ -161,7 +169,7 @@
       # not loaded automatically at startup.
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [];
+        gitPlugins = with pkgs.neovimPlugins; [indent-rainbowline-nvim];
         general = with pkgs.vimPlugins; [
           avante-nvim
           blink-cmp
@@ -176,6 +184,7 @@
           fzf-lua
           gitsigns-nvim
           grug-far-nvim
+          indent-blankline-nvim
           lazydev-nvim
           mini-nvim
           noice-nvim

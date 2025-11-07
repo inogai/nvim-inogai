@@ -63,7 +63,7 @@ require("snacks").setup {
   bigfile = { enabled = true },
   dashboard = dashboard,
   explorer = { enabled = true },
-  indent = { enabled = true },
+  indent = { enabled = false },
   input = { enabled = true },
   picker = { enabled = false },
   notifier = { enabled = true },
