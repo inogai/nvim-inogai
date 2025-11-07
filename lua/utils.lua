@@ -43,7 +43,11 @@ function M.import_dir(dirname)
   for _, pkg in ipairs(found_paths[1].files) do
     local module_name = pkg:match("lua/" .. dirname .. "/(.*)%.lua$")
     if module_name then
-      require(dirname .. "." .. module_name)
+      local ok, _ = pcall(require, dirname .. "." .. module_name)
+
+      if not ok then
+        vim.notify("Failed to load module: " .. dirname .. "." .. module_name, vim.log.levels.ERROR)
+      end
     end
   end
 end
