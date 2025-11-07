@@ -203,6 +203,7 @@
           snacks-nvim
           todo-comments-nvim
           trouble-nvim
+          venv-selector-nvim
           vim-wakatime
           yazi-nvim
         ];
