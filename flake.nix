@@ -184,6 +184,7 @@
           fzf-lua
           gitsigns-nvim
           grug-far-nvim
+          guess-indent-nvim
           indent-blankline-nvim
           lazydev-nvim
           mini-nvim
