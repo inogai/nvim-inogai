@@ -1,8 +1,5 @@
 U = require "utils"
-
 require "config.options"
-
-vim.cmd.colorscheme "moegi"
 
 U.packadd "nvim-treesitter"
 U.packadd "nvim-lspconfig"
@@ -16,15 +13,11 @@ require "nvim-treesitter.configs".setup {
   indent = { enable = true, disable = { 'ruby', 'css' } },
 }
 
-
-
 U.autocmd("VimEnter", {
   callback = function()
     U.packadd "which-key.nvim"
-    U.import_dir "lang"
-    U.import_dir "plugins"
-
     require "config.keymaps"
+
     vim.schedule(function()
       vim.api.nvim_exec_autocmds("User", {
         pattern = "VeryLazy",
@@ -32,3 +25,10 @@ U.autocmd("VimEnter", {
     end)
   end
 })
+
+
+if vim.g.vscode then
+  require("config.vscode")
+else
+  require("config.neovim")
+end
