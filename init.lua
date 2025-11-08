@@ -1,6 +1,10 @@
 U = require "utils"
 require "config.options"
 
+if vim.env["NVIM_DEV_MODULE"] then
+  require "config.dev"
+end
+
 U.packadd "nvim-treesitter"
 U.packadd "nvim-lspconfig"
 

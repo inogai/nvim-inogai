@@ -81,12 +81,29 @@
         "type": "github"
       }
     },
+    "plugins-moegi.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762606223,
+        "narHash": "sha256-RoCQES2mmZYvh2r2BT4qKXg/FTmk1IZJqfaGhnxIs2U=",
+        "owner": "inogai",
+        "repo": "moegi.nvim",
+        "rev": "d69a472442435415024557e2d9a244c809101bfe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "inogai",
+        "repo": "moegi.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "inogai": "inogai",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
-        "plugins-indent-rainbowline.nvim": "plugins-indent-rainbowline.nvim"
+        "plugins-indent-rainbowline.nvim": "plugins-indent-rainbowline.nvim",
+        "plugins-moegi.nvim": "plugins-moegi.nvim"
       }
     }
   },

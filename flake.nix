@@ -26,6 +26,12 @@
       flake = false;
     };
 
+    "plugins-moegi.nvim" = {
+      url = "github:inogai/moegi.nvim";
+      # url = "git+file:///Users/inogai/Workspaces/moegi.nvim";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -154,7 +160,9 @@
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [];
+        gitPlugins = with pkgs.neovimPlugins; [
+          moegi-nvim
+        ];
         general =
           (with pkgs.vimPlugins; [
             vim-startuptime
@@ -162,7 +170,7 @@
             which-key-nvim
           ])
           ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
-            moegi-nvim
+            # moegi-nvim
           ]);
       };
 
