@@ -1,15 +1,15 @@
-local workspace_path = vim.fn.expand("~/Documents/Obsidian/v2")
+local workspace_path = vim.fn.expand('~/Documents/Obsidian/v2')
 
-U.autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = workspace_path .. "/**",
+U.autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = workspace_path .. '/**',
 
   callback = function()
-    print("Loading Obsidian.nvim...")
-    U.packadd "obsidian.nvim"
+    print('Loading Obsidian.nvim...')
+    U.packadd('obsidian.nvim')
 
     U.blink_add_source('obsidian')
 
-    require "obsidian".setup {
+    require('obsidian').setup({
       completion = {
         blink = true,
       },
@@ -20,7 +20,7 @@ U.autocmd({ "BufRead", "BufNewFile" }, {
           name = 'v2',
           path = workspace_path,
         },
-      }
-    }
+      },
+    })
   end,
 })

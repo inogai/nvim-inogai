@@ -3,18 +3,18 @@
 local function pick_file(cwd)
   return function()
     vim.fn.chdir(cwd) -- TODO: only cd if success
-    require "fzf-lua".files({
+    require('fzf-lua').files({
       cwd = cwd,
     })
   end
 end
 
-U.packadd "persistence.nvim"
-require "persistence".setup {}
+U.packadd('persistence.nvim')
+require('persistence').setup({})
 
-U.packadd "snacks.nvim"
+U.packadd('snacks.nvim')
 
-Snacks = require("snacks")
+Snacks = require('snacks')
 
 ---@type snacks.dashboard.Opts
 ---@diagnostic disable-next-line: missing-fields
@@ -22,22 +22,47 @@ local dashboard = {
   enabled = true,
 
   width = 60,
-  row = nil,                                                                   -- dashboard position. nil for center
-  col = nil,                                                                   -- dashboard position. nil for center
-  pane_gap = 4,                                                                -- empty columns between vertical panes
+  row = nil, -- dashboard position. nil for center
+  col = nil, -- dashboard position. nil for center
+  pane_gap = 4, -- empty columns between vertical panes
   autokeys = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', -- autokey sequence
 
   preset = {
     pick = nil,
     keys = {
-      { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.dashboard.pick("files")' },
+      {
+        icon = ' ',
+        key = 'f',
+        desc = 'Find File',
+        action = ':lua Snacks.dashboard.pick("files")',
+      },
       { icon = ' ', key = 'n', desc = 'New File', action = ':ene | startinsert' },
-      { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.dashboard.pick("live_grep")' },
-      { icon = ' ', key = 'r', desc = 'Recent Files', action = ':lua Snacks.dashboard.pick("oldfiles")' },
-      { icon = ' ', key = 'c', desc = 'Config', action = pick_file(vim.fn.stdpath('config')) },
-      { icon = ' ', key = 's', desc = 'Restore Session', action = function() require("persistence").load() end },
+      {
+        icon = ' ',
+        key = 'g',
+        desc = 'Find Text',
+        action = ':lua Snacks.dashboard.pick("live_grep")',
+      },
+      {
+        icon = ' ',
+        key = 'r',
+        desc = 'Recent Files',
+        action = ':lua Snacks.dashboard.pick("oldfiles")',
+      },
+      {
+        icon = ' ',
+        key = 'c',
+        desc = 'Config',
+        action = pick_file(vim.fn.stdpath('config')),
+      },
+      {
+        icon = ' ',
+        key = 's',
+        desc = 'Restore Session',
+        action = function() require('persistence').load() end,
+      },
       { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
-    }
+    },
   },
 
   sections = {
@@ -45,21 +70,21 @@ local dashboard = {
       pane = 1,
       {
         section = 'terminal',
-        cmd = "winterm-rs",
+        cmd = 'winterm-rs',
         height = 18,
         width = 40,
         padding = 1,
-      }
+      },
     },
     {
       pane = 2,
-      { section = "keys", gap = 1, padding = 1 }
+      { section = 'keys', gap = 1, padding = 1 },
     },
   },
 }
 
 ---@type snacks.Config
-require("snacks").setup {
+require('snacks').setup({
   bigfile = { enabled = true },
   dashboard = dashboard,
   explorer = { enabled = true },
@@ -80,6 +105,6 @@ require("snacks").setup {
     },
     refresh = 50,
   },
-  terminal = { enabled = true, shell = "nu" },
+  terminal = { enabled = true, shell = 'nu' },
   words = { enabled = true },
-}
+})

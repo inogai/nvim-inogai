@@ -1,7 +1,7 @@
 local metals_config = nil
 
 U.autocmd('FileType', {
-  pattern = "scala",
+  pattern = 'scala',
   callback = function()
     U.packadd('nvim-metals')
 

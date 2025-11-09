@@ -1,3 +1,3 @@
-U.packadd "todo-comments.nvim"
+U.packadd('todo-comments.nvim')
 
-require "todo-comments".setup {}
+require('todo-comments').setup({})

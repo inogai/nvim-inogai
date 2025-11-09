@@ -21,7 +21,8 @@ vim.o.undofile = true -- Save undo history
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
-vim.opt.listchars = { tab = ' ', multispace = '---+', lead = ' ', trail = '·', nbsp = '␣' }
+vim.opt.listchars =
+  { tab = ' ', multispace = '---+', lead = ' ', trail = '·', nbsp = '␣' }
 
 -- Sync clipboard between OS and Neovim.
 -- Schedule the setting after `UiEnter` because it can increase startup-time.

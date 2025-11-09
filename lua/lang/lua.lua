@@ -7,18 +7,18 @@ vim.lsp.config('lua_ls', {
   },
 })
 
-U.set_formatter("lua", { "stylua", lsp_format = "last" })
+U.set_formatter('lua', { 'stylua', lsp_format = 'last' })
 
 U.autocmd('Filetype', {
   pattern = 'lua',
   callback = function()
     U.packadd('lazydev.nvim')
 
-    require "lazydev".setup {
+    require('lazydev').setup({
       library = {
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
         { path = 'snacks.nvim' },
       },
-    }
+    })
   end,
 })

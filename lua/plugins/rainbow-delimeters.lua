@@ -1,1 +1,1 @@
-U.packadd "rainbow-delimiters.nvim"
+U.packadd('rainbow-delimiters.nvim')

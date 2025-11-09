@@ -1,3 +1,3 @@
-U.packadd "grug-far.nvim"
+U.packadd('grug-far.nvim')
 
-require("grug-far").setup {}
+require('grug-far').setup({})

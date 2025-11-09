@@ -1,3 +1,3 @@
-vim.lsp.enable("nil_ls")
+vim.lsp.enable('nil_ls')
 
-U.set_formatter("nix", { "alejandra" })
+U.set_formatter('nix', { 'alejandra' })

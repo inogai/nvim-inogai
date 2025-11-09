@@ -2,26 +2,23 @@ local wk = require('which-key')
 
 local function F() return require('fzf-lua') end
 
+-- stylua: ignore
 wk.add({
-  { '<D-s>',           '<cmd>w<cr><esc>',          desc = '[S]ave File',           mode = 'nixs' },
-  { '<F2>',            vim.lsp.buf.rename,         desc = 'LSP Rename',            mode = 'nixs' },
-  { '<esc>',           '<cmd>nohlsearch<cr><esc>', desc = 'Clear Search Highlight' },
+  { '<D-s>',           '<cmd>w<cr><esc>',                                          desc = '[S]ave File',           mode = 'nixs' },
+  { '<F2>',            vim.lsp.buf.rename,                                         desc = 'LSP Rename',            mode = 'nixs' },
+  { '<esc>',           '<cmd>nohlsearch<cr><esc>',                                 desc = 'Clear Search Highlight' },
 
-  { '<leader><space>', '<cmd>FzfLua files<cr>',    desc = 'Find Files (Root Dir)' },
-  {
-    '<leader>,',
-    '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>',
-    desc = 'Switch Buffer',
-  },
+  { '<leader><space>', '<cmd>FzfLua files<cr>',                                    desc = 'Find Files (Root Dir)' },
+  { '<leader>,',       '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Switch Buffer', },
 
-  { '<C-h>', '<C-w>h',                                          desc = 'Go to left window',  mode = 'nixs' },
-  { '<C-j>', '<C-w>j',                                          desc = 'Go to lower window', mode = 'nixs' },
-  { '<C-k>', '<C-w>k',                                          desc = 'Go to upper window', mode = 'nixs' },
-  { '<C-l>', '<C-w>l',                                          desc = 'Go to right window', mode = 'nixs' },
-  { '<C-/>', function() require "snacks".terminal.toggle() end, desc = "Terminal",           mode = 'nixst' },
+  { '<C-h>',           '<C-w>h',                                                   desc = 'Go to left window',     mode = 'nixs' },
+  { '<C-j>',           '<C-w>j',                                                   desc = 'Go to lower window',    mode = 'nixs' },
+  { '<C-k>',           '<C-w>k',                                                   desc = 'Go to upper window',    mode = 'nixs' },
+  { '<C-l>',           '<C-w>l',                                                   desc = 'Go to right window',    mode = 'nixs' },
+  { '<C-/>',           function() require('snacks').terminal.toggle() end,         desc = 'Terminal',              mode = 'nixst' },
 
-  { 'zR',    function() require('ufo').openAllFolds() end,      desc = 'Open all folds' },
-  { 'zM',    function() require('ufo').closeAllFolds() end,     desc = 'Close all folds' },
+  { 'zR',              function() require('ufo').openAllFolds() end,               desc = 'Open all folds' },
+  { 'zM',              function() require('ufo').closeAllFolds() end,              desc = 'Close all folds' },
 
   {
     'K',
@@ -90,7 +87,7 @@ wk.add({
   { '<leader>sk', '<cmd>FzfLua keymaps<cr>',                   desc = 'Key Maps' },
   { '<leader>sm', '<cmd>FzfLua marks<cr>',                     desc = 'Jump to Mark' },
   { '<leader>sn', function() require('noice').cmd('pick') end, desc = '[N]oice' },
-  { '<leader>sr', '<cmd>GrugFar<cr>',                          desc = "[R]eplace" },
+  { '<leader>sr', '<cmd>GrugFar<cr>',                          desc = '[R]eplace' },
   { '<leader>sR', '<cmd>FzfLua resume<cr>',                    desc = 'Resume' },
   { '<leader>sq', '<cmd>FzfLua quickfix<cr>',                  desc = 'Quickfix List' },
   { '<leader>ss', function() F().lsp_document_symbols() end,   desc = 'Goto Symbol' },

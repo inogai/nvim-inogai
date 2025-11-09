@@ -1,9 +1,9 @@
-U.packadd "fzf-lua"
+U.packadd('fzf-lua')
 
 local actions = require('fzf-lua.actions')
 local config = require('fzf-lua.config')
 
-require "fzf-lua".setup {
+require('fzf-lua').setup({
   -- config.defaults.actions.files['ctrl-t'] = require('trouble.sources.fzf').open
 
   fzf_colors = true,
@@ -28,6 +28,6 @@ require "fzf-lua".setup {
       previewer = vim.fn.executable('delta') == 1 and 'codeaction_native' or nil,
     },
   },
-}
+})
 
-require "fzf-lua".register_ui_select()
+require('fzf-lua').register_ui_select()

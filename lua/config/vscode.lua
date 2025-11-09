@@ -1,2 +1,2 @@
-require "plugins.flash"
-require "plugins.mini"
+require('plugins.flash')
+require('plugins.mini')

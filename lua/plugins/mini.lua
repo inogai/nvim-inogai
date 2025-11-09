@@ -32,8 +32,8 @@ local function setup_mini_ai(opts, custom_textobjects)
   }))
 end
 
-U.packadd "mini.nvim"
-U.packadd "nvim-treesitter-textobjects"
+U.packadd('mini.nvim')
+U.packadd('nvim-treesitter-textobjects')
 
 local ai = require('mini.ai')
 
@@ -50,7 +50,10 @@ local textobjects = {
   {
     key = 'f',
     desc = 'function',
-    spec = ai.gen_spec.treesitter({ a = { '@function.outer' }, i = { '@function.inner' } }),
+    spec = ai.gen_spec.treesitter({
+      a = { '@function.outer' },
+      i = { '@function.inner' },
+    }),
   },
   {
     key = 'c',
@@ -70,28 +73,28 @@ local textobjects = {
 }
 
 setup_which_key(textobjects)
-setup_mini_ai({ n_lines = 500, }, textobjects)
+setup_mini_ai({ n_lines = 500 }, textobjects)
 
-require "mini.pairs".setup {
+require('mini.pairs').setup({
   skip_next = [=[[%w%%%'%[%\"%.%`%$]]=],
   skip_unbalanced = true,
   markdown = true,
-}
+})
 
-require "mini.icons".setup {
+require('mini.icons').setup({
   lsp = {
     copilot = { glyph = ' ', hl = 'MiniIconsGrey' },
     avantecmd = { glyph = ' ', hl = 'MiniIconsGreen' },
     avantemention = { glyph = '󰁥 ', hl = 'MiniIconsRed' },
   },
-}
+})
 
-require "mini.icons".mock_nvim_web_devicons() -- NOTE: For bufferline.nvim
+require('mini.icons').mock_nvim_web_devicons() -- NOTE: For bufferline.nvim
 
-require "mini.surround".setup {
+require('mini.surround').setup({
   mappings = {
-    add = 'ga',     -- Add surrounding in Normal and Visual modes
-    delete = 'gs',  -- Delete surrounding
+    add = 'ga', -- Add surrounding in Normal and Visual modes
+    delete = 'gs', -- Delete surrounding
     replace = 'ge', -- Replace surrounding
 
     -- find = 'sf', -- Find surrounding (to the right)
@@ -102,6 +105,6 @@ require "mini.surround".setup {
     suffix_last = 'l', -- Suffix to search with "prev" method
     suffix_next = 'n', -- Suffix to search with "next" method
   },
-}
+})
 
-require "mini.statusline".setup()
+require('mini.statusline').setup()

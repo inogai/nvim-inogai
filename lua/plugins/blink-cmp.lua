@@ -1,7 +1,7 @@
-U.packadd "friendly-snippets"
-U.packadd "blink.cmp"
+U.packadd('friendly-snippets')
+U.packadd('blink.cmp')
 
-require("blink.cmp").setup {
+require('blink.cmp').setup({
   keymap = {
     preset = 'none',
     ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
@@ -71,8 +71,7 @@ require("blink.cmp").setup {
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
 
-    providers = {
-    },
+    providers = {},
   },
   fuzzy = { implementation = 'prefer_rust_with_warning' },
-}
+})

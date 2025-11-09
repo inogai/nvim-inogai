@@ -1,9 +1,9 @@
-U.autocmd("User", {
-  pattern = "VeryLazy",
+U.autocmd('User', {
+  pattern = 'VeryLazy',
   callback = function()
-    U.packadd "copilot-lsp"
-    U.packadd "copilot.lua"
-    U.packadd "blink-copilot"
+    U.packadd('copilot-lsp')
+    U.packadd('copilot.lua')
+    U.packadd('blink-copilot')
 
     U.blink_add_source('copilot', {
       name = 'copilot',
@@ -12,7 +12,7 @@ U.autocmd("User", {
       async = true,
     })
 
-    require "copilot".setup {
+    require('copilot').setup({
       suggestion = { enabled = false },
       panel = { enabled = false },
       filetypes = {
@@ -27,6 +27,6 @@ U.autocmd("User", {
           dismiss = '<Esc>',
         },
       },
-    }
-  end
+    })
+  end,
 })

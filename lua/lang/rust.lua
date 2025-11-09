@@ -1,12 +1,11 @@
-U.packadd "rustaceanvim"
+U.packadd('rustaceanvim')
 
 vim.g.rustaceanvim = {
   server = {
     default_settings = {
       ['rust-analyzer'] = {
-        files = { excludeDirs = { ".direnv" }
-        }
+        files = { excludeDirs = { '.direnv' } },
       },
     },
-  }
+  },
 }

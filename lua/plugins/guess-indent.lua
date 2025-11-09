@@ -1,3 +1,3 @@
-U.packadd "guess-indent.nvim"
+U.packadd('guess-indent.nvim')
 
-require "guess-indent".setup {}
+require('guess-indent').setup({})

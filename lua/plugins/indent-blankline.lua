@@ -1,5 +1,5 @@
-U.packadd "indent-blankline.nvim"
-U.packadd "indent-rainbowline.nvim"
+U.packadd('indent-blankline.nvim')
+U.packadd('indent-rainbowline.nvim')
 
 vim.api.nvim_set_hl(0, 'IblScope', { fg = require('moegi').get_palette().green })
 
@@ -9,6 +9,6 @@ local opts = {
   scope = { char = '▎' },
 }
 
-opts = require 'indent-rainbowline'.make_opts(opts)
+opts = require('indent-rainbowline').make_opts(opts)
 
-require "ibl".setup(opts)
+require('ibl').setup(opts)

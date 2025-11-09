@@ -1,1 +1,1 @@
-U.packadd "vim-wakatime"
+U.packadd('vim-wakatime')

@@ -1,6 +1,6 @@
-U.packadd "nvim-ufo"
+U.packadd('nvim-ufo')
 
-require "ufo".setup {
+require('ufo').setup({
   provider_selector = function(_bufnr, filetype, _buftype)
     local main = 'lsp'
     local fallback = 'indent'
@@ -9,4 +9,4 @@ require "ufo".setup {
 
     return { main, fallback }
   end,
-}
+})

@@ -1,1 +1,1 @@
-vim.lsp.enable("astro")
+vim.lsp.enable('astro')
