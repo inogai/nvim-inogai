@@ -1,6 +1,7 @@
 U.autocmd('User', {
   pattern = 'VeryLazy',
   callback = function()
+    U.packadd('blink-cmp-avante')
     U.packadd('avante.nvim')
 
     require('avante').setup({

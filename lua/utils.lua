@@ -71,15 +71,10 @@ end
 ---@param name string
 ---@param opts? blink.cmp.SourceProviderConfig
 function M.blink_add_source(name, opts)
-  M.onload('blink-cmp', function()
+  M.onload('blink.cmp', function()
     local blink_cmp = require('blink.cmp.config')
-    blink_cmp.sources.default = vim.list_extend(
     ---@diagnostic disable-next-line: param-type-mismatch
-      blink_cmp.sources.default,
-      {
-        vim.tbl_extend('force', { name = name }, opts or {}),
-      }
-    )
+    vim.list_extend(blink_cmp.sources.default, { name })
 
     if not opts then return end
     blink_cmp.sources.providers[name] = opts
