@@ -108,4 +108,11 @@ function M.get_conform_formatters() return conform_formatters end
 
 M.autocmd = vim.api.nvim_create_autocmd
 
+---@param event string
+---@param pattern string
+---@param cb function
+function M.on(event, pattern, cb)
+  return M.autocmd(event, { pattern = pattern, callback = cb })
+end
+
 return M
