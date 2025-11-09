@@ -27,7 +27,7 @@
     };
 
     "plugins-moegi.nvim" = {
-      url = "github:inogai/moegi.nvim";
+      url = "github:inogai/moegi.nvim/dev";
       # url = "git+file:///Users/inogai/Workspaces/moegi.nvim";
       flake = false;
     };
