@@ -7,6 +7,8 @@ vim.lsp.config('lua_ls', {
   },
 })
 
+U.set_formatter("lua", { "stylua", lsp_format = "last" })
+
 U.autocmd('Filetype', {
   pattern = 'lua',
   callback = function()

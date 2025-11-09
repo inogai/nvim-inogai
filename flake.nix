@@ -133,6 +133,7 @@
 
             # Lua
             lua-language-server
+            stylua
 
             # markdown
             markdownlint-cli2
@@ -340,7 +341,11 @@
         devShells = {
           default = pkgs.mkShell {
             name = defaultPackageName;
-            packages = [defaultPackage];
+            packages = with pkgs; [
+              defaultPackage
+              stylua
+              lua-language-server
+            ];
             inputsFrom = [];
             shellHook = '''';
           };
