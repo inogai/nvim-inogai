@@ -5,7 +5,9 @@ end
 U.on('User', 'VeryLazy', function()
   U.packadd('edgy.nvim')
 
-  require('edgy').setup({
+  local edgy = require('edgy')
+
+  edgy.setup({
     bottom = {
       { ft = 'snacks_terminal', filter = win_is_floating },
       { ft = 'trouble' },
@@ -22,10 +24,30 @@ U.on('User', 'VeryLazy', function()
     keys = {
       ['q'] = function(win) win:close() end,
       ['<C-q>'] = function(win) win:hide() end,
-      ['<C-w>>'] = function(win) win:resize('width', 2) end,
-      ['<C-w><lt>'] = function(win) win:resize('width', -2) end,
-      ['<C-w>+'] = function(win) win:resize('height', 2) end,
-      ['<C-w>-'] = function(win) win:resize('height', -2) end,
     },
   })
+
+  local function resize_win(direction, amount)
+    return function()
+      local win = edgy.get_win()
+      if win then win:resize(direction, amount) end
+    end
+  end
+
+  U.onload('hydra.nvim', function()
+    local Hydra = require('hydra')
+
+    Hydra({
+      name = 'Win Resize',
+      mode = { 'n', 't' },
+      body = '<C-w>',
+      -- stylua: ignore
+      heads = {
+        { '+', resize_win('height', 2),  { desc = 'Add Height' } },
+        { '-', resize_win('height', -2), { desc = 'Sub Height' } },
+        { '>', resize_win('width', 2),   { desc = 'Add Width' } },
+        { '<', resize_win('width', -2),  { desc = 'Sub Width' } },
+      },
+    })
+  end)
 end)

@@ -195,6 +195,7 @@
           gitsigns-nvim
           grug-far-nvim
           guess-indent-nvim
+          hydra-nvim
           indent-blankline-nvim
           lazydev-nvim
           mini-nvim
