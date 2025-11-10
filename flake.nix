@@ -32,6 +32,11 @@
       flake = false;
     };
 
+    "plugins-triforce.nvim" = {
+      url = "github:gisketch/triforce.nvim";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -178,7 +183,10 @@
       # not loaded automatically at startup.
       # use with packadd and an autocommand in config to achieve lazy loading
       optionalPlugins = {
-        gitPlugins = with pkgs.neovimPlugins; [indent-rainbowline-nvim];
+        gitPlugins = with pkgs.neovimPlugins; [
+          indent-rainbowline-nvim
+          triforce-nvim
+        ];
         general = with pkgs.vimPlugins; [
           avante-nvim
           blink-cmp
@@ -217,6 +225,7 @@
           trouble-nvim
           venv-selector-nvim
           vim-wakatime
+          nvzone-volt
           yazi-nvim
         ];
       };

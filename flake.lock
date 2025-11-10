@@ -98,13 +98,30 @@
         "type": "github"
       }
     },
+    "plugins-triforce.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762755155,
+        "narHash": "sha256-CS4l3kmemR+XpeGKov4Td5nxyMyHYufvySQaamHtsNk=",
+        "owner": "gisketch",
+        "repo": "triforce.nvim",
+        "rev": "9ba8c3f3d93907c311a102fca253ae0454a6edb8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gisketch",
+        "repo": "triforce.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "inogai": "inogai",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-indent-rainbowline.nvim": "plugins-indent-rainbowline.nvim",
-        "plugins-moegi.nvim": "plugins-moegi.nvim"
+        "plugins-moegi.nvim": "plugins-moegi.nvim",
+        "plugins-triforce.nvim": "plugins-triforce.nvim"
       }
     }
   },
