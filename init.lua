@@ -20,6 +20,8 @@ U.autocmd('VimEnter', {
     U.packadd('which-key.nvim')
     require('config.keymaps')
 
+    require('config.hydra')
+
     vim.schedule(
       function()
         vim.api.nvim_exec_autocmds('User', {
