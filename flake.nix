@@ -204,10 +204,12 @@
           grug-far-nvim
           guess-indent-nvim
           hydra-nvim
+          iron-nvim
           indent-blankline-nvim
           lazydev-nvim
           mini-nvim
           noice-nvim
+          NotebookNavigator-nvim
           nvim-lint
           nvim-lspconfig
           nvim-metals

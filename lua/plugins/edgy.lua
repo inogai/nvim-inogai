@@ -12,8 +12,13 @@ edgy.setup({
     { ft = 'trouble' },
   },
 
+  right = {
+    { ft = 'iron' },
+  },
+
   options = {
     bottom = { size = 10 },
+    right = { size = 80 },
   },
 
   animate = { enabled = false },
