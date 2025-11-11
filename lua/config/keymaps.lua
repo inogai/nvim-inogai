@@ -93,7 +93,6 @@ wk.add({
 
   { '<leader>g',  desc = '+[G]it' },
   { '<leader>gl', function() Snacks.lazygit.open() end, desc = '[L]azygit' },
-  { '<leader>gg', '<cmd>DiffviewOpen<cr>',              desc = 'Diffview' },
 
   { '<leader>ua', '<cmd>Copilot toggle<cr>',            desc = '[A]I Completions' },
   { '<leader>uC', '<cmd>FzfLua colorschemes<cr>',       desc = '[C]olorscheme' },

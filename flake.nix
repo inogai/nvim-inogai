@@ -196,6 +196,7 @@
           conform-nvim
           copilot-lua
           copilot-lsp
+          diffview-nvim
           edgy-nvim
           flash-nvim
           friendly-snippets
