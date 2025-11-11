@@ -11,12 +11,6 @@ wk.add({
   { '<leader><space>', '<cmd>FzfLua files<cr>',                                    desc = 'Find Files (Root Dir)' },
   { '<leader>,',       '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Switch Buffer', },
 
-  { '<C-h>',           '<C-w>h',                                                   desc = 'Go to left window',     mode = 'nixs' },
-  { '<C-j>',           '<C-w>j',                                                   desc = 'Go to lower window',    mode = 'nixs' },
-  { '<C-k>',           '<C-w>k',                                                   desc = 'Go to upper window',    mode = 'nixs' },
-  { '<C-l>',           '<C-w>l',                                                   desc = 'Go to right window',    mode = 'nixs' },
-  { '<C-/>',           function() require('snacks').terminal.toggle() end,         desc = 'Terminal',              mode = 'nixst' },
-
   { 'zR',              function() require('ufo').openAllFolds() end,               desc = 'Open all folds' },
   { 'zM',              function() require('ufo').closeAllFolds() end,              desc = 'Close all folds' },
 
