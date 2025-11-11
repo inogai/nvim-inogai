@@ -71,3 +71,10 @@ require('mini.surround').setup({
 })
 
 require('mini.statusline').setup()
+
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup(vim.tbl_deep_extend('force', hipatterns.config or {}, {
+  highlighters = {
+    hex = hipatterns.gen_highlighter.hex_color(),
+  },
+}))
