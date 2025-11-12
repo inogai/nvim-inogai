@@ -8,4 +8,5 @@ U.import_dir('lang')
 
 return {
   { import = 'lze_specs' },
+  { import = 'lang' },
 }

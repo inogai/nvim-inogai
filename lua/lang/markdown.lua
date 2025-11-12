@@ -1,10 +1,9 @@
 U.set_formatter('markdown', { 'prettierd' })
 
-U.autocmd('Filetype', {
-  pattern = 'markdown',
-  callback = function()
-    U.packadd('render-markdown.nvim')
-
+return {
+  'render-markdown.nvim',
+  ft = 'markdown',
+  after = function()
     local m = require('render-markdown')
 
     m.setup({
@@ -29,4 +28,4 @@ U.autocmd('Filetype', {
       }):map('<leader>um')
     end)
   end,
-})
+}

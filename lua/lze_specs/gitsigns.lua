@@ -9,9 +9,7 @@ return {
   'gitsigns.nvim',
   event = { 'BufReadPost', 'BufNewFile' },
   after = function()
-    local gitsigns = require('gitsigns')
-
-    gitsigns.setup({
+    require('gitsigns').setup({
       signs = {
         add = { text = '▎' },
         change = { text = '▎' },
@@ -28,25 +26,15 @@ return {
         changedelete = { text = '▎' },
       },
     })
-
-    require('which-key').add({
-      { ']c', function() gitsigns.nav_hunk('next') end, desc = 'Next Hunk' },
-      { '[c', function() gitsigns.nav_hunk('prev') end, desc = 'Prev Hunk' },
-      { 'gh', function() gitsigns.stage_hunk() end, desc = 'Stage Hunk' },
-      {
-        'gh',
-        function() gitsigns.stage_hunk(visual_range()) end,
-        desc = 'Stage Hunk',
-        mode = 'v',
-      },
-      { 'gH', function() gitsigns.reset_hunk() end, desc = 'Reset Hunk' },
-      {
-        'gH',
-        function() gitsigns.reset_hunk(visual_range()) end,
-        desc = 'Reset Hunk',
-        mode = 'v',
-      },
-      { 'go', function() gitsigns.preview_hunk_inline() end, desc = 'Preview Hunk' },
-    })
   end,
+  -- stylua: ignore
+  keys = {
+    { ']c', function() require('gitsigns').nav_hunk('next') end,           desc = 'Next Hunk' },
+    { '[c', function() require('gitsigns').nav_hunk('prev') end,           desc = 'Prev Hunk' },
+    { 'gh', function() require('gitsigns').stage_hunk() end,               desc = 'Stage Hunk' },
+    { 'gh', function() require('gitsigns').stage_hunk(visual_range()) end, desc = 'Stage Hunk',  mode = 'v', },
+    { 'gH', function() require('gitsigns').reset_hunk() end,               desc = 'Reset Hunk' },
+    { 'gH', function() require('gitsigns').reset_hunk(visual_range()) end, desc = 'Reset Hunk',  mode = 'v', },
+    { 'go', function() require('gitsigns').preview_hunk_inline() end,      desc = 'Preview Hunk' },
+  },
 }

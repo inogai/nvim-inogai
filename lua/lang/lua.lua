@@ -9,11 +9,10 @@ vim.lsp.config('lua_ls', {
 
 U.set_formatter('lua', { 'stylua', lsp_format = 'last' })
 
-U.autocmd('Filetype', {
-  pattern = 'lua',
-  callback = function()
-    U.packadd('lazydev.nvim')
-
+return {
+  'lazydev.nvim',
+  ft = 'lua',
+  after = function()
     require('lazydev').setup({
       library = {
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
@@ -21,4 +20,4 @@ U.autocmd('Filetype', {
       },
     })
   end,
-})
+}

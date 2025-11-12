@@ -14,6 +14,7 @@ This configuration has been refactored to use [lze](https://github.com/BirdeeHub
 ### Basic Conversion Pattern
 
 **Old way (in lua/plugins/):**
+
 ```lua
 U.packadd('plugin-name.nvim')
 
@@ -28,6 +29,7 @@ require('which-key').add({
 ```
 
 **New way (in lua/lze_specs/):**
+
 ```lua
 return {
   "plugin-name.nvim",
@@ -36,17 +38,20 @@ return {
     require("plugin-name").setup({
       -- config here
     })
-    
+
     require("which-key").add({
-      { "<leader>key", function() require("plugin-name").some_function() end, desc = "Description" },
     })
   end,
+  keys = {
+    { "<leader>key", function() require("plugin-name").some_function() end, desc = "Description" },
+  }
 }
 ```
 
 ### Common Trigger Types
 
 1. **Event-based loading:**
+
    ```lua
    event = "VimEnter"           -- Load when Neovim starts
    event = "BufEnter"           -- Load when entering a buffer
@@ -55,6 +60,7 @@ return {
    ```
 
 2. **Key-based loading:**
+
    ```lua
    keys = {
      { "<leader>f", function() require("plugin").function() end, desc = "Description" },
@@ -63,12 +69,14 @@ return {
    ```
 
 3. **Command-based loading:**
+
    ```lua
    cmd = "PluginCommand"
    cmd = { "Command1", "Command2" }  -- Multiple commands
    ```
 
 4. **Filetype-based loading:**
+
    ```lua
    ft = "python"
    ft = { "python", "javascript", "lua" }  -- Multiple filetypes
@@ -82,19 +90,24 @@ return {
 
 ### Special Cases
 
-**Plugins with after directories (like cmp sources):**
+**Plugins with dependencies:**
+
 ```lua
 return {
-  "cmp-source.nvim",
-  event = "InsertEnter",
-  load = function(name)
-    vim.cmd.packadd(name)
-    vim.cmd.packadd(name .. "/after")
-  end,
+  { "deps.nvim", dep_of = "plugin-name.nvim" }
+  {
+    "plugin-name"
+    event = "VimEnter",
+    after = function()
+      -- do something the requires deps.nvim
+    end
+  }
 }
+
 ```
 
 **Plugins that need initialization before loading:**
+
 ```lua
 return {
   "plugin-name.nvim",
@@ -159,3 +172,4 @@ If a plugin doesn't load as expected:
 3. Verify the plugin is in the `optionalPlugins` category in flake.nix
 4. Check for any errors in the Neovim messages
 5. Use `:checkhealth` to verify plugin availability
+

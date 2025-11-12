@@ -3,14 +3,17 @@ vim.lsp.enable({
   'ruff',
 })
 
-U.on('User', 'VimEnter', function()
-  U.packadd('venv-selector.nvim')
-  require('venv-selector').setup({})
+return {
+  'venv-selector.nvim',
+  event = 'VimEnter',
+  after = function()
+    require('venv-selector').setup({})
 
-  vim.keymap.set(
-    'n',
-    '<localleader>v',
-    '<cmd>VenvSelect<cr>',
-    { desc = 'Select virtual environment' }
-  )
-end)
+    vim.keymap.set(
+      'n',
+      '<localleader>v',
+      '<cmd>VenvSelect<cr>',
+      { desc = 'Select virtual environment' }
+    )
+  end,
+}

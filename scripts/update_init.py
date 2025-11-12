@@ -1,14 +1,9 @@
-#!/usr/bin/env python3
 """Update lze_specs/init.lua files"""
 
-import os
 from pathlib import Path
-from textwrap import dedent
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-
-INIT_ROOT = PROJECT_ROOT / "lua" / "lze_specs"
 
 
 def collect_files(directory: Path):
@@ -44,4 +39,5 @@ def write_init_file(directory: Path):
 
 
 if __name__ == "__main__":
-    write_init_file(INIT_ROOT)
+    write_init_file(PROJECT_ROOT / "lua" / "lze_specs")
+    write_init_file(PROJECT_ROOT / "lua" / "lang")
