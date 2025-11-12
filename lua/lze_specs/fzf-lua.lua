@@ -17,6 +17,7 @@ return {
         actions = {
           ['ctrl-i'] = { actions.toggle_ignore },
           ['ctrl-h'] = { actions.toggle_hidden },
+          ['ctrl-t'] = require('trouble.sources.fzf').actions.open,
         },
       },
       grep = {
