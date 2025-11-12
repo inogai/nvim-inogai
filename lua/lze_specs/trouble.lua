@@ -5,6 +5,8 @@ return {
   after = function() require('trouble').setup({}) end,
   -- stylua: ignore
   keys = {
+    { ']x',         function() require('trouble').next({ jump = true }) end,      desc = 'Next Trouble', },
+    { '[x',         function() require('trouble').prev({ jump = true }) end,      desc = 'Prev Trouble', },
     { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>',                        desc = 'Diagnostics (Trouble)', },
     { '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',           desc = 'Buffer Diagnostics (Trouble)', },
     { '<leader>cs', '<cmd>Trouble symbols toggle focus=false<cr>',                desc = 'Symbols (Trouble)', },

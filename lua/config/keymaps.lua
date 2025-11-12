@@ -30,16 +30,6 @@ wk.add({
     function() vim.diagnostic.jump({ count = -1, float = true, severity = vim.diagnostic.severity.ERROR }) end,
     desc = 'Prev [E]rror',
   },
-  {
-    ']x',
-    function() require('trouble').next({ jump = true }) end,
-    desc = 'Next Trouble',
-  },
-  {
-    '[x',
-    function() require('trouble').prev({ jump = true }) end,
-    desc = 'Prev Trouble',
-  },
 
   { '<leader>e',  '<cmd>Yazi<cr>' },
   { '<leader>E',  '<cmd>Yazi cwd<cr>' },
