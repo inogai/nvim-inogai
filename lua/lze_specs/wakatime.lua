@@ -1,0 +1,3 @@
+return {
+  'vim-wakatime',
+}

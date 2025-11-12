@@ -132,6 +132,10 @@
             fzf
             git
 
+            # Python
+            basedpyright
+            ruff
+
             # Node.js
             nodePackages.nodejs
             nodePackages.neovim
@@ -158,6 +162,9 @@
 
             # LaTeX
             tectonic
+
+            # Wakatime
+            wakatime-cli
           ])
           ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
             winterm-rs
@@ -171,9 +178,8 @@
         ];
         general =
           (with pkgs.vimPlugins; [
-            vim-startuptime
             catppuccin-nvim
-            which-key-nvim
+            lze
           ])
           ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
             # moegi-nvim
@@ -227,8 +233,10 @@
           todo-comments-nvim
           trouble-nvim
           venv-selector-nvim
+          vim-startuptime
           vim-wakatime
           nvzone-volt
+          which-key-nvim
           yazi-nvim
         ];
       };

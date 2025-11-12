@@ -3,7 +3,7 @@ vim.lsp.enable({
   'ruff',
 })
 
-U.on('User', 'VeryLazy', function()
+U.on('User', 'VimEnter', function()
   U.packadd('venv-selector.nvim')
   require('venv-selector').setup({})
 

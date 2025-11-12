@@ -51,11 +51,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1762482733,
-        "narHash": "sha256-g/da4FzvckvbiZT075Sb1/YDNDr+tGQgh4N8i5ceYMg=",
+        "lastModified": 1762604901,
+        "narHash": "sha256-Pr2jpryIaQr9Yx8p6QssS03wqB6UifnnLr3HJw9veDw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e1ebeec86b771e9d387dd02d82ffdc77ac753abc",
+        "rev": "f6b44b2401525650256b977063dbcf830f762369",
         "type": "github"
       },
       "original": {
@@ -101,11 +101,11 @@
     "plugins-triforce.nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1762755155,
-        "narHash": "sha256-CS4l3kmemR+XpeGKov4Td5nxyMyHYufvySQaamHtsNk=",
+        "lastModified": 1762814850,
+        "narHash": "sha256-HxBsQ6rck4BeCK1pQBHVaOP9CsNEERZ7eoN/myu90XU=",
         "owner": "gisketch",
         "repo": "triforce.nvim",
-        "rev": "9ba8c3f3d93907c311a102fca253ae0454a6edb8",
+        "rev": "7ebee3c8c5e1490cf9d332626188da382b073ced",
         "type": "github"
       },
       "original": {
