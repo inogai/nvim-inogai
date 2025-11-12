@@ -154,6 +154,9 @@
             nil
             alejandra
 
+            # JSON
+            vscode-langservers-extracted
+
             # frontend
             eslint_d
             prettierd
