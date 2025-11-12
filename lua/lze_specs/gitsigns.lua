@@ -25,16 +25,21 @@ return {
         topdelete = { text = '' },
         changedelete = { text = '▎' },
       },
+      current_line_blame = true,
+    })
+
+    -- stylua: ignore
+    require('which-key').add({
+      { ']c',         function() require('gitsigns').nav_hunk('next') end,            desc = 'Next Hunk' },
+      { '[c',         function() require('gitsigns').nav_hunk('prev') end,            desc = 'Prev Hunk' },
+
+      { 'gh',         function() require('gitsigns').stage_hunk() end,                desc = 'Stage Hunk' },
+      { 'gh',         function() require('gitsigns').stage_hunk(visual_range()) end,  desc = 'Stage Hunk',  mode = 'v', },
+      { 'gH',         function() require('gitsigns').reset_hunk() end,                desc = 'Reset Hunk' },
+      { 'gH',         function() require('gitsigns').reset_hunk(visual_range()) end,  desc = 'Reset Hunk',  mode = 'v', },
+      { 'go',         function() require('gitsigns').preview_hunk_inline() end,       desc = 'Preview Hunk' },
+
+      { '<leader>ub', function() require('gitsigns').toggle_current_line_blame() end, desc = '[B]lame' },
     })
   end,
-  -- stylua: ignore
-  keys = {
-    { ']c', function() require('gitsigns').nav_hunk('next') end,           desc = 'Next Hunk' },
-    { '[c', function() require('gitsigns').nav_hunk('prev') end,           desc = 'Prev Hunk' },
-    { 'gh', function() require('gitsigns').stage_hunk() end,               desc = 'Stage Hunk' },
-    { 'gh', function() require('gitsigns').stage_hunk(visual_range()) end, desc = 'Stage Hunk',  mode = 'v', },
-    { 'gH', function() require('gitsigns').reset_hunk() end,               desc = 'Reset Hunk' },
-    { 'gH', function() require('gitsigns').reset_hunk(visual_range()) end, desc = 'Reset Hunk',  mode = 'v', },
-    { 'go', function() require('gitsigns').preview_hunk_inline() end,      desc = 'Preview Hunk' },
-  },
 }
