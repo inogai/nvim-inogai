@@ -117,6 +117,8 @@ return {
         terminal = { enabled = true, shell = 'nu' },
         words = { enabled = true },
       })
+
+      Snacks.toggle.inlay_hints():map('<leader>uh')
     end,
   },
 }
