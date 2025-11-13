@@ -1,5 +1,5 @@
 return {
-  { 'copilot-lsp', dep_of = 'copilot.lua' },
+  { 'copilot-lsp',   dep_of = 'copilot.lua' },
   { 'blink-copilot', dep_of = 'copilot.lua' },
   {
     'copilot.lua',

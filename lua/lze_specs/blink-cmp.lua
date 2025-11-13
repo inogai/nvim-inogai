@@ -2,8 +2,17 @@ return {
   { 'friendly-snippets', dep_of = { 'blink.cmp' } },
   {
     'blink.cmp',
+    cmd = 'BlinkCmp',
     event = 'InsertEnter',
     after = function()
+      local sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        providers = {},
+      }
+
+      sources =
+          vim.tbl_deep_extend('force', sources, require('blink.cmp.config').sources)
+
       require('blink.cmp').setup({
         keymap = {
           preset = 'none',
@@ -70,12 +79,7 @@ return {
             },
           },
         },
-
-        sources = {
-          default = { 'lsp', 'path', 'snippets', 'buffer' },
-
-          providers = {},
-        },
+        sources = sources,
         fuzzy = { implementation = 'prefer_rust_with_warning' },
       })
     end,
