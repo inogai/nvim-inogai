@@ -7,7 +7,7 @@ function M.packadd(name)
   if M.__loaded[name] then return end
 
   M.__loaded[name] = true
-  vim.cmd('packadd ' .. name)
+  vim.cmd.packadd(name)
 
   vim.api.nvim_exec_autocmds('User', {
     pattern = 'PackLoaded_' .. name,

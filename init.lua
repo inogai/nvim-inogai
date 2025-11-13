@@ -4,6 +4,10 @@ require('config.options')
 
 if vim.env['NVIM_DEV_MODULE'] then require('config.dev') end
 
+vim.g.lze = {
+  load = U.packadd,
+}
+
 require('lze').load({
   { import = vim.g.vscode and 'config.vscode' or 'config.neovim' },
 })
