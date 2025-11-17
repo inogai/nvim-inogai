@@ -158,6 +158,7 @@
             vscode-langservers-extracted
 
             # frontend
+            vtsls
             eslint_d
             prettierd
             prettier

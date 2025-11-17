@@ -6,5 +6,6 @@ return {
   { import = 'lang.scala' },
   { import = 'lang.nix' },
   { import = 'lang.rust' },
-  { import = 'lang.astro' }
+  { import = 'lang.astro' },
+  { import = 'lang.typescript' }
 }
