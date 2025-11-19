@@ -167,6 +167,9 @@
             # LaTeX
             tectonic
 
+            # Img-clip.nvim
+            pngpaste
+
             # Wakatime
             wakatime-cli
           ])
