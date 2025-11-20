@@ -212,6 +212,7 @@
           diffview-nvim
           edgy-nvim
           flash-nvim
+          flutter-tools-nvim
           friendly-snippets
           fzf-lua
           gitsigns-nvim

@@ -1,11 +1,12 @@
 return {
+  { import = 'lang.astro' },
+  { import = 'lang.flutter' },
+  { import = 'lang.json' },
   { import = 'lang.lua' },
   { import = 'lang.markdown' },
-  { import = 'lang.python' },
-  { import = 'lang.json' },
-  { import = 'lang.scala' },
   { import = 'lang.nix' },
+  { import = 'lang.python' },
   { import = 'lang.rust' },
-  { import = 'lang.astro' },
-  { import = 'lang.typescript' }
+  { import = 'lang.scala' },
+  { import = 'lang.typescript' },
 }
