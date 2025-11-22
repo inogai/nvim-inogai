@@ -160,6 +160,7 @@
             # frontend
             vtsls
             eslint_d
+            eslint
             prettierd
             prettier
             astro-language-server
