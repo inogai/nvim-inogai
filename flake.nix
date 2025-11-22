@@ -169,6 +169,12 @@
             # LaTeX
             tectonic
 
+            # Typst
+            typst
+            tinymist
+            prettypst
+            websocat
+
             # Img-clip.nvim
             pngpaste
 
@@ -242,6 +248,7 @@
           snacks-nvim
           todo-comments-nvim
           trouble-nvim
+          typst-preview-nvim
           venv-selector-nvim
           vim-startuptime
           vim-wakatime
@@ -313,7 +320,7 @@
         settings = {
           suffix-path = true;
           suffix-LD = true;
-          wrapRc = true;
+          wrapRc = false;
           # IMPORTANT:
           # your alias may not conflict with your other packages.
           # aliases = ["vim"];
