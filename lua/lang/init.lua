@@ -8,5 +8,6 @@ return {
   { import = 'lang.python' },
   { import = 'lang.rust' },
   { import = 'lang.scala' },
+  { import = 'lang.svelte' },
   { import = 'lang.typescript' },
 }

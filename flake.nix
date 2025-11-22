@@ -164,6 +164,7 @@
             prettierd
             prettier
             astro-language-server
+            svelte-language-server
 
             # LaTeX
             tectonic
