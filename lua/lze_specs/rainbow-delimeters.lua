@@ -1,6 +1,6 @@
 return {
   {
-    'rainbow-delimiters',
+    'rainbow-delimiters.nvim',
     event = 'VimEnter',
   },
 }
