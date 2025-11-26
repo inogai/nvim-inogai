@@ -2,6 +2,7 @@ return {
   { import = 'lze_specs.noice' },
   { import = 'lze_specs.fzf-lua' },
   { import = 'lze_specs.nvim-lint' },
+  { import = 'lze_specs.leetcode-nvim' },
   { import = 'lze_specs.flash' },
   { import = 'lze_specs.obsidian' },
   { import = 'lze_specs._lspconfig' },
@@ -29,5 +30,5 @@ return {
   { import = 'lze_specs.bufferline' },
   { import = 'lze_specs.wakatime' },
   { import = 'lze_specs.guess-indent' },
-  { import = 'lze_specs.edgy' }
+  { import = 'lze_specs.edgy' },
 }

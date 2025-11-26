@@ -230,6 +230,7 @@
           iron-nvim
           indent-blankline-nvim
           lazydev-nvim
+          leetcode-nvim
           mini-nvim
           noice-nvim
           NotebookNavigator-nvim

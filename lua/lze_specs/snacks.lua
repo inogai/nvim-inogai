@@ -59,6 +59,12 @@ return {
               action = ':lua Snacks.dashboard.pick("oldfiles")',
             },
             {
+              icon = '󰔸 ',
+              key = 'l',
+              desc = 'LeetCode',
+              action = '<Cmd>Leet<CR>',
+            },
+            {
               icon = ' ',
               key = 'c',
               desc = 'Config',
