@@ -4,6 +4,7 @@ return {
     'blink.cmp',
     cmd = 'BlinkCmp',
     event = 'InsertEnter',
+    dep_of = { 'obsidian.nvim' },
     after = function()
       local sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },

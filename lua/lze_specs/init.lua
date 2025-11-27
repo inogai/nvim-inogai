@@ -4,7 +4,7 @@ return {
   { import = 'lze_specs.nvim-lint' },
   { import = 'lze_specs.leetcode-nvim' },
   { import = 'lze_specs.flash' },
-  { import = 'lze_specs.obsidian' },
+  { import = 'lze_specs.obsidian-nvim' },
   { import = 'lze_specs._lspconfig' },
   { import = 'lze_specs.copilot' },
   { import = 'lze_specs.yazi' },
