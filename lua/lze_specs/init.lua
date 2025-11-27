@@ -31,4 +31,5 @@ return {
   { import = 'lze_specs.wakatime' },
   { import = 'lze_specs.guess-indent' },
   { import = 'lze_specs.edgy' },
+  { import = 'lze_specs.opencode-nvim' },
 }

@@ -37,6 +37,13 @@
       flake = false;
     };
 
+    "plugins-opencode.nvim" = {
+      # fork: https://github.com/NickvanDyke/opencode.nvim/pull/84
+      # reason: bun server support (opencode >= 1.0.105)
+      url = "github:bartman/opencode.nvim/find-server-called-bun";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -206,6 +213,7 @@
       optionalPlugins = {
         gitPlugins = with pkgs.neovimPlugins; [
           indent-rainbowline-nvim
+          opencode-nvim
           triforce-nvim
         ];
         general = with pkgs.vimPlugins; [

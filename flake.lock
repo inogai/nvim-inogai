@@ -98,6 +98,23 @@
         "type": "github"
       }
     },
+    "plugins-opencode.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1764166519,
+        "narHash": "sha256-8TXXAfvYtEr9NpSO0/k4DwvDisSu8K9Rtwf2mr5RjHM=",
+        "owner": "bartman",
+        "repo": "opencode.nvim",
+        "rev": "4e7a4cfcae7a8160f3edb9c4380ef768adbbe4ab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bartman",
+        "ref": "find-server-called-bun",
+        "repo": "opencode.nvim",
+        "type": "github"
+      }
+    },
     "plugins-triforce.nvim": {
       "flake": false,
       "locked": {
@@ -121,6 +138,7 @@
         "nixpkgs": "nixpkgs_2",
         "plugins-indent-rainbowline.nvim": "plugins-indent-rainbowline.nvim",
         "plugins-moegi.nvim": "plugins-moegi.nvim",
+        "plugins-opencode.nvim": "plugins-opencode.nvim",
         "plugins-triforce.nvim": "plugins-triforce.nvim"
       }
     }
