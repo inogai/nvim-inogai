@@ -2,7 +2,7 @@ return {
   {
     'nvim-lint',
     event = 'VimEnter',
-    config = function()
+    after = function()
       local lint = require('lint')
 
       lint.linters_by_ft = {
