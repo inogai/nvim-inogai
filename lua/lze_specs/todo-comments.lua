@@ -1,7 +1,5 @@
 return {
-  {
-    'todo-comments',
-    event = 'VimEnter',
-    config = function() require('todo-comments').setup({}) end,
-  },
+  'todo-comments.nvim',
+  event = 'VimEnter',
+  after = function() require('todo-comments').setup({}) end,
 }
