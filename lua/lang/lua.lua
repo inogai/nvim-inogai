@@ -7,7 +7,7 @@ vim.lsp.config('lua_ls', {
   },
 })
 
-U.set_formatter('lua', { 'stylua', lsp_format = 'last' })
+U.set_formatter('lua', { 'stylua', lsp_format = 'first' })
 
 return {
   'lazydev.nvim',
