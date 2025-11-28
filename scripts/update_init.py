@@ -11,7 +11,7 @@ def collect_files(directory: Path):
     it = filter(lambda p: p.suffix == ".lua", it)
     it = filter(lambda p: p.name != "init.lua", it)
 
-    return list(it)
+    return sorted(it)
 
 
 def create_init_file(directory: Path):
