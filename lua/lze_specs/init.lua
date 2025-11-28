@@ -28,7 +28,6 @@ return {
   { import = 'lze_specs.snacks' },
   { import = 'lze_specs.startuptime' },
   { import = 'lze_specs.todo-comments' },
-  { import = 'lze_specs.triforce' },
   { import = 'lze_specs.trouble' },
   { import = 'lze_specs.ufo' },
   { import = 'lze_specs.wakatime' },

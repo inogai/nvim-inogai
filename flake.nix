@@ -32,11 +32,6 @@
       flake = false;
     };
 
-    "plugins-triforce.nvim" = {
-      url = "github:gisketch/triforce.nvim";
-      flake = false;
-    };
-
     "plugins-opencode.nvim" = {
       # fork: https://github.com/NickvanDyke/opencode.nvim/pull/84
       # reason: bun server support (opencode >= 1.0.105)
@@ -214,7 +209,6 @@
         gitPlugins = with pkgs.neovimPlugins; [
           indent-rainbowline-nvim
           opencode-nvim
-          triforce-nvim
         ];
         general = with pkgs.vimPlugins; [
           avante-nvim
@@ -261,7 +255,6 @@
           venv-selector-nvim
           vim-startuptime
           vim-wakatime
-          nvzone-volt
           which-key-nvim
           yazi-nvim
         ];
