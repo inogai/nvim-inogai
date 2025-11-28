@@ -1,7 +1,7 @@
 return {
   'iron.nvim',
   dep_of = { 'NotebookNavigator.nvim' },
-  event = 'VimEnter',
+  ft = { 'python' }, -- currently only setting up for python
   after = function()
     local iron = require('iron.core')
     local view = require('iron.view')

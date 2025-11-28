@@ -16,7 +16,7 @@ return {
   { import = 'lze_specs.guess-indent' },
   { import = 'lze_specs.hydra' },
   { import = 'lze_specs.indent-blankline' },
-  { import = 'lze_specs.iron' },
+  { import = 'lze_specs.iron-nvim' },
   { import = 'lze_specs.leetcode-nvim' },
   { import = 'lze_specs.mini' },
   { import = 'lze_specs.noice' },
