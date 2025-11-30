@@ -1,7 +1,7 @@
 return {
   'NotebookNavigator.nvim',
   -- dependency = { 'iron.nvim', 'mini.nvim' }
-  event = 'VimEnter',
+  ft = { 'python' },
   after = function()
     local nn = require('notebook-navigator')
     local Hydra = require('hydra')
