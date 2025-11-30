@@ -7,7 +7,6 @@ return {
   { import = 'lze_specs.bufferline' },
   { import = 'lze_specs.conform' },
   { import = 'lze_specs.copilot' },
-  { import = 'lze_specs.diffview' },
   { import = 'lze_specs.edgy' },
   { import = 'lze_specs.flash' },
   { import = 'lze_specs.fzf-lua' },
