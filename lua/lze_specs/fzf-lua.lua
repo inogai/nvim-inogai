@@ -58,6 +58,13 @@ return {
       { '<leader>ss', function() F.lsp_document_symbols() end,                               desc = 'Goto Symbol', },
       { '<leader>sS', function() F.lsp_live_workspace_symbols() end,                         desc = 'Goto Symbol (Workspace)', },
 
+      { '<leader>gl', F.git_bcommits,                                                        desc = '[L]ogs (Buffer)' },
+      { '<leader>gL', F.git_commits,                                                         desc = '[L]ogs (Workspace)' },
+
+      { '<leader>gb', F.git_branches,                                                        desc = '[B]ranches' },
+      { '<leader>gg', F.git_status,                                                          desc = '[G]it Status' },
+      { '<leader>gh', F.git_hunks,                                                           desc = '[H]unks' },
+
       { '<leader>uC', '<cmd>FzfLua colorschemes<cr>',                                        desc = '[C]olorscheme' },
     })
   end,
