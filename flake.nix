@@ -19,7 +19,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    inogai.url = "github:inogai/nur-packages";
 
     "plugins-indent-rainbowline.nvim" = {
       url = "github:TheGLander/indent-rainbowline.nvim";
@@ -59,7 +58,6 @@
     self,
     nixpkgs,
     nixCats,
-    inogai,
     ...
   } @ inputs: let
     inherit (nixCats) utils;
@@ -126,66 +124,62 @@
       # at RUN TIME for plugins. Will be available to PATH within neovim terminal
       # this includes LSPs
       lspsAndRuntimeDeps = {
-        general =
-          (with pkgs; [
-            # General CLI deps
-            coreutils
-            fd
-            fzf
-            git
+        general = with pkgs; [
+          # General CLI deps
+          coreutils
+          fd
+          fzf
+          git
 
-            # Python
-            basedpyright
-            ruff
+          # Python
+          basedpyright
+          ruff
 
-            # Node.js
-            nodePackages.nodejs
-            nodePackages.neovim
+          # Node.js
+          nodePackages.nodejs
+          nodePackages.neovim
 
-            # Lua
-            lua-language-server
-            stylua
+          # Lua
+          lua-language-server
+          stylua
 
-            # markdown
-            markdownlint-cli2
+          # markdown
+          markdownlint-cli2
 
-            # scala
-            metals
+          # scala
+          metals
 
-            # nix
-            nil
-            alejandra
+          # nix
+          nil
+          alejandra
 
-            # JSON
-            vscode-langservers-extracted
+          # JSON
+          vscode-langservers-extracted
 
-            # frontend
-            vtsls
-            eslint_d
-            eslint
-            prettierd
-            prettier
-            astro-language-server
-            svelte-language-server
+          # frontend
+          vtsls
+          eslint_d
+          eslint
+          prettierd
+          prettier
+          astro-language-server
+          svelte-language-server
 
-            # LaTeX
-            tectonic
+          # LaTeX
+          tectonic
 
-            # Typst
-            typst
-            tinymist
-            prettypst
-            websocat
+          # Typst
+          typst
+          tinymist
+          prettypst
+          websocat
 
-            # Img-clip.nvim
-            pngpaste
+          # Img-clip.nvim
+          pngpaste
 
-            # Wakatime
-            wakatime-cli
-          ])
-          ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
-            winterm-rs
-          ]);
+          # Wakatime
+          wakatime-cli
+        ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -193,14 +187,10 @@
         gitPlugins = with pkgs.neovimPlugins; [
           moegi-nvim
         ];
-        general =
-          (with pkgs.vimPlugins; [
-            catppuccin-nvim
-            lze
-          ])
-          ++ (with inogai.packages.${pkgs.stdenv.hostPlatform.system}; [
-            # moegi-nvim
-          ]);
+        general = with pkgs.vimPlugins; [
+          catppuccin-nvim
+          lze
+        ];
       };
 
       # not loaded automatically at startup.

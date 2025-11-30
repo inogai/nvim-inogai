@@ -26,9 +26,9 @@ return {
         enabled = true,
 
         width = 60,
-        row = nil,                                                                   -- dashboard position. nil for center
-        col = nil,                                                                   -- dashboard position. nil for center
-        pane_gap = 4,                                                                -- empty columns between vertical panes
+        row = nil, -- dashboard position. nil for center
+        col = nil, -- dashboard position. nil for center
+        pane_gap = 4, -- empty columns between vertical panes
         autokeys = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', -- autokey sequence
 
         preset = {
@@ -81,16 +81,6 @@ return {
         },
 
         sections = {
-          {
-            pane = 1,
-            {
-              section = 'terminal',
-              cmd = 'winterm-rs',
-              height = 18,
-              width = 40,
-              padding = 1,
-            },
-          },
           {
             pane = 2,
             { section = 'keys', gap = 1, padding = 1 },
