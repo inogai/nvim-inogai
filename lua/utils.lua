@@ -43,9 +43,14 @@ local conform_loaded = false
 -- Store formatters before conform setup
 local conform_formatters = {}
 
----@param ft string
+---@param ft string | string[]
 ---@param formatters table
 function M.set_formatter(ft, formatters)
+  if type(ft) == 'table' then
+    M.set_formatter(ft[1], formatters)
+    return
+  end
+
   if conform_loaded then
     vim.notify(
       'Formatter ' .. ft .. ' attempted to set after conform loaded.',
