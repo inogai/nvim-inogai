@@ -34,8 +34,7 @@ return {
           timeout_ms = 2000,
           lsp_format = 'fallback',
         },
-
-        formatters_by_ft = U.get_conform_formatters(),
+        formatters_by_ft = {},
       })
       configureAutoformat()
     end,

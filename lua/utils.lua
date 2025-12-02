@@ -39,30 +39,19 @@ function M.blink_add_source(name, opts)
   end)
 end
 
-local conform_loaded = false
--- Store formatters before conform setup
-local conform_formatters = {}
-
----@param ft string | string[]
----@param formatters table
+---@param ft string | string[] a filetype or list of filetypes
+---@param formatters conform.FiletypeFormatter the formatter table or function
 function M.set_formatter(ft, formatters)
-  if type(ft) == 'table' then
-    M.set_formatter(ft[1], formatters)
-    return
-  end
+  if type(ft) == 'string' then ft = { ft } end
 
-  if conform_loaded then
-    vim.notify(
-      'Formatter ' .. ft .. ' attempted to set after conform loaded.',
-      vim.log.levels.WARN
-    )
-    return
-  end
-  conform_formatters[ft] = formatters
+  M.onload('conform.nvim', function()
+    local conform = require('conform')
+
+    for _, f in ipairs(ft) do
+      conform.formatters_by_ft[f] = formatters
+    end
+  end)
 end
-
----@return table
-function M.get_conform_formatters() return conform_formatters end
 
 M.autocmd = vim.api.nvim_create_autocmd
 
