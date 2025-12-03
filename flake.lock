@@ -67,16 +67,15 @@
     "plugins-opencode.nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1764166519,
-        "narHash": "sha256-8TXXAfvYtEr9NpSO0/k4DwvDisSu8K9Rtwf2mr5RjHM=",
-        "owner": "bartman",
+        "lastModified": 1764685610,
+        "narHash": "sha256-TUmnUJcyhy7jl8kKKiritBbrCtiEWlSbHRkwAbAZikE=",
+        "owner": "NickvanDyke",
         "repo": "opencode.nvim",
-        "rev": "4e7a4cfcae7a8160f3edb9c4380ef768adbbe4ab",
+        "rev": "9566e58774e47256c380d62db7bfdc922f283a57",
         "type": "github"
       },
       "original": {
-        "owner": "bartman",
-        "ref": "find-server-called-bun",
+        "owner": "NickvanDyke",
         "repo": "opencode.nvim",
         "type": "github"
       }

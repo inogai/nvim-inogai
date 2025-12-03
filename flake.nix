@@ -32,9 +32,7 @@
     };
 
     "plugins-opencode.nvim" = {
-      # fork: https://github.com/NickvanDyke/opencode.nvim/pull/84
-      # reason: bun server support (opencode >= 1.0.105)
-      url = "github:bartman/opencode.nvim/find-server-called-bun";
+      url = "github:NickvanDyke/opencode.nvim";
       flake = false;
     };
 
