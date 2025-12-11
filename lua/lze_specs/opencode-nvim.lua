@@ -5,13 +5,16 @@ return {
     ---@type opencode.Opts
     vim.g.opencode_opts = {
       provider = {
-        enabled = 'snacks',
+        enabled = 'kitty',
+        kitty = {
+          location = 'os-window',
+        },
       },
     }
   end,
   -- stylua: ignore
   keys = {
-    { '<C-a>',      function() require('opencode').ask('@this: ', { submit = true }) end, desc = 'Ask opencode AI',         mode = { 'n', 'x' } },
+    { '<C-i>',      function() require('opencode').ask('@this: ', { submit = true }) end, desc = 'Ask opencode AI',         mode = { 'n', 'x' } },
     { '<C-x>',      function() require('opencode').select() end,                          desc = 'Execute opencode action', mode = { 'n', 'x' } },
     { '<leader>gc', function() require('opencode').command('commit') end,                 desc = '[C]ommit with opencode' },
     -- { '<leader>oa', function() M.prompt('@this') end,                   desc = 'Add to opencode context', mode = { 'n', 'x' } },
