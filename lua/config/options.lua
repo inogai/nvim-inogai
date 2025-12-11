@@ -33,6 +33,9 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
+-- Guide
+vim.opt.colorcolumn = '80'
+
 -- Split behavior
 vim.opt.splitright = true
 vim.opt.splitbelow = true
