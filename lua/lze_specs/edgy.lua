@@ -20,7 +20,7 @@ return {
       },
 
       options = {
-        bottom = { size = 10 },
+        bottom = { size = 0.3 },
         right = { size = 80 },
       },
 
