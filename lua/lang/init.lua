@@ -5,6 +5,7 @@ return {
   { import = 'lang.lua' },
   { import = 'lang.markdown' },
   { import = 'lang.nix' },
+  { import = 'lang.purescript' },
   { import = 'lang.python' },
   { import = 'lang.rust' },
   { import = 'lang.scala' },
