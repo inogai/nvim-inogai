@@ -1,4 +1,4 @@
-vim.lsp.enable({ 'vtsls', 'eslint', 'denols' })
+vim.lsp.enable({ 'vtsls', 'eslint', 'denols', 'html', 'tailwindcss' })
 
 vim.lsp.config('denols', {
   -- on_attach = on_attach,

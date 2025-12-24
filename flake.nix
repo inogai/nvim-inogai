@@ -162,6 +162,7 @@
           prettier
           astro-language-server
           svelte-language-server
+          tailwindcss-language-server
 
           # LaTeX
           tectonic
