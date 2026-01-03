@@ -11,5 +11,6 @@ return {
   { import = 'lang.scala' },
   { import = 'lang.svelte' },
   { import = 'lang.typescript' },
-  { import = 'lang.typst' }
+  { import = 'lang.typst' },
+  { import = 'lang.yaml' }
 }

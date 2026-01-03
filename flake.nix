@@ -154,6 +154,9 @@
           # JSON
           vscode-langservers-extracted
 
+          # yaml
+          yaml-language-server
+
           # frontend
           vtsls
           eslint_d
