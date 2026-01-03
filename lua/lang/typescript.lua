@@ -51,7 +51,8 @@ U.set_formatter({
   'typescriptreact',
   'javascriptreact',
   'astro',
-  'css',
 }, get_formatter)
+
+U.set_formatter('css', { 'prettierd' })
 
 return {}
