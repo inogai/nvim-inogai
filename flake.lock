@@ -80,13 +80,30 @@
         "type": "github"
       }
     },
+    "plugins-sidekick.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761909278,
+        "narHash": "sha256-ABuILCcKfYViZoFHaCepgIMLjvMEb/SBmGqGHUBucAM=",
+        "owner": "folke",
+        "repo": "sidekick.nvim",
+        "rev": "c2bdf8cfcd87a6be5f8b84322c1b5052e78e302e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "sidekick.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "plugins-indent-rainbowline.nvim": "plugins-indent-rainbowline.nvim",
         "plugins-moegi.nvim": "plugins-moegi.nvim",
-        "plugins-opencode.nvim": "plugins-opencode.nvim"
+        "plugins-opencode.nvim": "plugins-opencode.nvim",
+        "plugins-sidekick.nvim": "plugins-sidekick.nvim"
       }
     }
   },

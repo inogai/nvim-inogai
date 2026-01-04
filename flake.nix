@@ -20,6 +20,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
+    "plugins-sidekick.nvim" = {
+      url = "github:folke/sidekick.nvim";
+      flake = false;
+    };
+
     "plugins-indent-rainbowline.nvim" = {
       url = "github:TheGLander/indent-rainbowline.nvim";
       flake = false;
@@ -201,9 +206,9 @@
         gitPlugins = with pkgs.neovimPlugins; [
           indent-rainbowline-nvim
           opencode-nvim
+          sidekick-nvim
         ];
         general = with pkgs.vimPlugins; [
-          avante-nvim
           blink-cmp
           blink-cmp-avante
           blink-copilot
@@ -314,7 +319,7 @@
         settings = {
           suffix-path = true;
           suffix-LD = true;
-          wrapRc = true;
+          wrapRc = false;
           # IMPORTANT:
           # your alias may not conflict with your other packages.
           # aliases = ["vim"];

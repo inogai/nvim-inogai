@@ -24,6 +24,7 @@ return {
   { import = 'lze_specs.obsidian-nvim' },
   { import = 'lze_specs.opencode-nvim' },
   { import = 'lze_specs.rainbow-delimeters' },
+  { import = 'lze_specs.sidekick' },
   { import = 'lze_specs.snacks' },
   { import = 'lze_specs.startuptime' },
   { import = 'lze_specs.todo-comments' },

@@ -12,7 +12,7 @@ return {
       }
 
       sources =
-          vim.tbl_deep_extend('force', sources, require('blink.cmp.config').sources)
+        vim.tbl_deep_extend('force', sources, require('blink.cmp.config').sources)
 
       require('blink.cmp').setup({
         keymap = {
@@ -40,16 +40,6 @@ return {
 
           ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
           ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-          ['<C-p>'] = {
-            function(cmp)
-              if vim.b[vim.api.nvim_get_current_buf()].nes_state then
-                cmp.hide()
-                local nes = require('copilot-lsp.nes')
-                return nes.apply_pending_nes() and nes.walk_cursor_end_edit()
-              end
-            end,
-          },
         },
         appearance = {
           nerd_font_variant = 'mono',
