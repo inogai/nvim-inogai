@@ -35,6 +35,12 @@ return {
           lsp_format = 'fallback',
         },
         formatters_by_ft = {},
+        formatters = {
+          ['prettier-inogai'] = {
+            command = 'prettier-inogai',
+            args = { '--stdin-filepath', '$FILENAME' },
+          },
+        },
       })
       configureAutoformat()
     end,

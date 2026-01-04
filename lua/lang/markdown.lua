@@ -1,4 +1,4 @@
-U.set_formatter('markdown', { 'prettierd' })
+U.set_formatter('markdown', { 'prettier-inogai', 'prettierd', stop_after_first = true })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
