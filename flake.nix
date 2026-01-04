@@ -203,9 +203,7 @@
           opencode-nvim
         ];
         general = with pkgs.vimPlugins; [
-          avante-nvim
           blink-cmp
-          blink-cmp-avante
           blink-copilot
           bufferline-nvim
           conform-nvim

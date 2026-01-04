@@ -2,7 +2,6 @@ return {
   { import = 'lze_specs._lspconfig' },
   { import = 'lze_specs._treesitter' },
   { import = 'lze_specs._which-key' },
-  { import = 'lze_specs.avante' },
   { import = 'lze_specs.blink-cmp' },
   { import = 'lze_specs.bufferline' },
   { import = 'lze_specs.conform' },
