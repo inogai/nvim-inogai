@@ -13,6 +13,7 @@ return {
   { import = 'lze_specs.grug-far' },
   { import = 'lze_specs.guess-indent' },
   { import = 'lze_specs.hydra' },
+  { import = 'lze_specs.img-clip-nvim' },
   { import = 'lze_specs.indent-blankline' },
   { import = 'lze_specs.iron-nvim' },
   { import = 'lze_specs.leetcode-nvim' },

@@ -220,6 +220,7 @@
           guess-indent-nvim
           hydra-nvim
           iron-nvim
+          img-clip-nvim
           indent-blankline-nvim
           lazydev-nvim
           leetcode-nvim
