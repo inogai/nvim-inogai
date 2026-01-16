@@ -1,15 +1,41 @@
 return {
   'opencode.nvim',
   after = function()
+    local pane_initialized = false
+
+    ---@type opencode.Provider
+    local mux_provider = {
+      start = function(self)
+        if not pane_initialized then
+          vim.notify('Initializing opencode pane...')
+
+          vim.fn.system({
+            'zellij',
+            'action',
+            'new-pane',
+            '--name=opencode',
+            -- '--direction=right',
+            '--floating',
+            '--',
+            'bash',
+            '-c',
+            self.cmd,
+          })
+
+          vim.fn.system({
+            'zellij',
+            'action',
+            'toggle-floating-panes',
+          })
+        end
+      end,
+    }
+
     ---@module 'opencode'
     ---@type opencode.Opts
     vim.g.opencode_opts = {
-      provider = {
-        enabled = 'kitty',
-        kitty = {
-          location = 'os-window',
-        },
-      },
+      provider = mux_provider,
+      port = 53129,
     }
   end,
   -- stylua: ignore
