@@ -36,6 +36,11 @@
       flake = false;
     };
 
+    plugins-nvim-treesitter-textobjects = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      flake = false;
+    };
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     # };
@@ -129,6 +134,8 @@
           fzf
           git
 
+          tree-sitter
+
           # Python
           basedpyright
           ruff
@@ -201,6 +208,7 @@
         gitPlugins = with pkgs.neovimPlugins; [
           indent-rainbowline-nvim
           opencode-nvim
+          nvim-treesitter-textobjects
         ];
         general = with pkgs.vimPlugins; [
           blink-cmp
@@ -231,7 +239,6 @@
           nvim-lspconfig
           nvim-metals
           nvim-treesitter.withAllGrammars
-          nvim-treesitter-textobjects
           nvim-ufo
           obsidian-nvim
           persistence-nvim

@@ -1,14 +1,14 @@
 return {
   'nvim-treesitter',
-  priority = 100, -- Load early
+  priority = 100,
   after = function()
-    ---@diagnostic disable-next-line: missing-fields
-    require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby', 'css' },
-      },
-      indent = { enable = true, disable = { 'ruby', 'css' } },
+    U.autocmd('FileType', {
+      callback = function(args)
+        local language = vim.treesitter.language.get_lang(args.match)
+        if language and vim.treesitter.language.add(language) then
+          vim.treesitter.start(args.buf, language)
+        end
+      end,
     })
   end,
 }
