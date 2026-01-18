@@ -35,7 +35,6 @@ return {
     ---@type opencode.Opts
     vim.g.opencode_opts = {
       provider = mux_provider,
-      port = 53129,
     }
   end,
   -- stylua: ignore
