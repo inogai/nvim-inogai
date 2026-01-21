@@ -13,5 +13,6 @@ return {
   { import = 'lang.svelte' },
   { import = 'lang.typescript' },
   { import = 'lang.typst' },
+  { import = 'lang.vue' },
   { import = 'lang.yaml' }
 }

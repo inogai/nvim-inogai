@@ -172,6 +172,7 @@
           prettier
           astro-language-server
           svelte-language-server
+          vue-language-server
           tailwindcss-language-server
 
           # LaTeX
