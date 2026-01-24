@@ -1,4 +1,6 @@
-vim.lsp.enable({ 'svelte', 'vtsls', 'eslint' })
+local js_utils = require('my.js_utils')
+
+vim.lsp.enable({ 'svelte', 'vtsls' })
 
 local svelte_plugin = {
   name = 'typescript-svelte-plugin',
@@ -21,6 +23,7 @@ vim.lsp.config('vtsls', {
   },
 })
 
-U.set_formatter('svelte', { 'eslint_d' })
+U.set_formatter('svelte', js_utils.get_formatter)
+U.set_linter('svelte', { 'eslint_d' })
 
 return {}

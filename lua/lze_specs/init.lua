@@ -1,5 +1,6 @@
 return {
   { import = 'lze_specs._lspconfig' },
+  { import = 'lze_specs._nvim-lint' },
   { import = 'lze_specs._treesitter' },
   { import = 'lze_specs._which-key' },
   { import = 'lze_specs.blink-cmp' },
@@ -20,7 +21,6 @@ return {
   { import = 'lze_specs.mini' },
   { import = 'lze_specs.noice' },
   { import = 'lze_specs.notebook-navigator' },
-  { import = 'lze_specs.nvim-lint' },
   { import = 'lze_specs.obsidian-nvim' },
   { import = 'lze_specs.opencode-nvim' },
   { import = 'lze_specs.rainbow-delimeters' },

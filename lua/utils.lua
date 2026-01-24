@@ -2,6 +2,8 @@ local M = {
   __loaded = {},
 }
 
+function M.info(msg) vim.notify(vim.inspect(msg), vim.log.levels.INFO) end
+
 ---@param name string
 function M.packadd(name)
   if M.__loaded[name] then return end
@@ -49,6 +51,18 @@ function M.set_formatter(ft, formatters)
 
     for _, f in ipairs(ft) do
       conform.formatters_by_ft[f] = formatters
+    end
+  end)
+end
+
+function M.set_linter(ft, linters)
+  if type(ft) == 'string' then ft = { ft } end
+
+  M.onload('nvim-lint', function()
+    local lint = require('lint')
+
+    for _, f in ipairs(ft) do
+      lint.linters_by_ft[f] = linters
     end
   end)
 end

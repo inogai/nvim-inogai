@@ -2,6 +2,7 @@ return {
   { import = 'lang.astro' },
   { import = 'lang.caddyfile' },
   { import = 'lang.flutter' },
+  { import = 'lang.html' },
   { import = 'lang.json' },
   { import = 'lang.lua' },
   { import = 'lang.markdown' },

@@ -2,6 +2,6 @@
 vim.cmd.colorscheme('catppuccin-mocha')
 
 return {
-  { import = 'lze_specs' },
   { import = 'lang' },
+  { import = 'lze_specs' },
 }

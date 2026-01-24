@@ -4,27 +4,20 @@ local M = {}
 ---@param bufnr number
 ---@return string[]
 function M.get_formatter(bufnr)
-  if vim.lsp.get_clients({ bufnr = bufnr, name = 'denols' }) then
-    -- If denols is active, use its built-in formatter
-    return {}
-  end
-
-  local cutil = require('conform.util')
-
   if
-    cutil.root_file({ -- there are other eslint config files, add them if needed
+    vim.fs.root(bufnr, { -- there are other eslint config files, add them if needed
       '.eslintrc.json',
       'eslint.config.js',
       'eslint.config.ts',
-    })
+    }) ~= nil
   then
     return { 'eslint_d' }
   end
 
-  if cutil.root_file({
+  if vim.fs.root(bufnr, {
     '.prettierrc',
     '.editorconfig',
-  }) then
+  }) ~= nil then
     return { 'prettierd' }
   end
 
