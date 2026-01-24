@@ -3,6 +3,7 @@ return {
   { import = 'lze_specs._nvim-lint' },
   { import = 'lze_specs._treesitter' },
   { import = 'lze_specs._which-key' },
+  { import = 'lze_specs.autolist-nvim' },
   { import = 'lze_specs.blink-cmp' },
   { import = 'lze_specs.bufferline' },
   { import = 'lze_specs.conform' },

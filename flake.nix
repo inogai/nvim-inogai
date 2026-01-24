@@ -212,6 +212,7 @@
           nvim-treesitter-textobjects
         ];
         general = with pkgs.vimPlugins; [
+          autolist-nvim
           blink-cmp
           blink-copilot
           bufferline-nvim
