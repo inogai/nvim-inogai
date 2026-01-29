@@ -39,8 +39,8 @@ return {
   end,
   -- stylua: ignore
   keys = {
-    { '<C-i>',      function() require('opencode').ask('@this: ', { submit = true }) end, desc = 'Ask opencode AI',         mode = { 'n', 'x' } },
-    { '<C-x>',      function() require('opencode').select() end,                          desc = 'Execute opencode action', mode = { 'n', 'x' } },
+    { '<D-i>',      function() require('opencode').ask('@this: ', { submit = true }) end, desc = 'Ask opencode AI',         mode = { 'n', 'x' } },
+    { '<D-x>',      function() require('opencode').select() end,                          desc = 'Execute opencode action', mode = { 'n', 'x' } },
     { '<leader>gc', function() require('opencode').command('commit') end,                 desc = '[C]ommit with opencode' },
     -- { '<leader>oa', function() M.prompt('@this') end,                   desc = 'Add to opencode context', mode = { 'n', 'x' } },
     -- { '<leader>oo', function() M.toggle() end,                          desc = 'Toggle opencode window',  mode = { 'n', 't' } },

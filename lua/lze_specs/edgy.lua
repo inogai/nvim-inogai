@@ -76,12 +76,12 @@ return {
     })
 
     -- stylua: ignore
-    require("which-key").add {
-      { '<C-h>', '<C-w>h',                                           desc = 'Go to left window',  mode = 'nixs' },
-      { '<C-j>', '<C-w>j',                                           desc = 'Go to lower window', mode = 'nixs' },
-      { '<C-k>', '<C-w>k',                                           desc = 'Go to upper window', mode = 'nixs' },
-      { '<C-l>', '<C-w>l',                                           desc = 'Go to right window', mode = 'nixs' },
-      { '<C-/>', function() require('snacks').terminal.toggle() end, desc = 'Terminal',           mode = 'nixst' },
-    }
+    -- require("which-key").add {
+    --   { '<C-h>', '<C-w>h',                                           desc = 'Go to left window',  mode = 'nixs' },
+    --   { '<C-j>', '<C-w>j',                                           desc = 'Go to lower window', mode = 'nixs' },
+    --   { '<C-k>', '<C-w>k',                                           desc = 'Go to upper window', mode = 'nixs' },
+    --   { '<C-l>', '<C-w>l',                                           desc = 'Go to right window', mode = 'nixs' },
+    --   { '<C-/>', function() require('snacks').terminal.toggle() end, desc = 'Terminal',           mode = 'nixst' },
+    -- }
   end,
 }
