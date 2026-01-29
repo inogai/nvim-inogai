@@ -8,6 +8,7 @@ vim.opt.laststatus = 3 -- Only show one statusline
 vim.o.number = true -- Show line numbers
 vim.o.signcolumn = 'yes' -- Always show the sign column
 vim.o.cursorline = true -- Highlight the current line
+vim.o.relativenumber = true -- Show relative line numbers
 
 -- Fold
 -- note that status column is manage by snacks.nvim
