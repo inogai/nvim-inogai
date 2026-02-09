@@ -12,24 +12,27 @@ return {
       }
 
       sources =
-          vim.tbl_deep_extend('force', sources, require('blink.cmp.config').sources)
+        vim.tbl_deep_extend('force', sources, require('blink.cmp.config').sources)
+
+      local tab = {
+        function(cmp)
+          if cmp.snippet_active() then
+            return cmp.accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        'snippet_forward',
+        'fallback',
+      }
 
       require('blink.cmp').setup({
         keymap = {
           preset = 'none',
           ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
           ['<C-e>'] = { 'hide', 'fallback' },
-          ['<Tab>'] = {
-            function(cmp)
-              if cmp.snippet_active() then
-                return cmp.accept()
-              else
-                return cmp.select_and_accept()
-              end
-            end,
-            'snippet_forward',
-            'fallback',
-          },
+          ['<C-i>'] = tab, -- also bind <C-i> for zellij
+          ['<Tab>'] = tab,
           ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
 
           ['<Up>'] = { 'select_prev', 'fallback' },
