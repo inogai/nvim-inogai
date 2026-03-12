@@ -1,5 +1,7 @@
 U.set_formatter('markdown', { 'prettier-inogai', 'prettierd', stop_after_first = true })
 
+U.on('FileType', 'markdown', function() require('my.headings').setup(0, '#') end)
+
 return {
   'render-markdown.nvim',
   ft = 'markdown',
