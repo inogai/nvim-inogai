@@ -2,7 +2,6 @@ return {
   { 'nvim-treesitter-textobjects', dep_of = { 'mini.nvim' } },
   {
     'mini.nvim',
-    dep_of = 'NotebookNavigator.nvim',
     event = 'VimEnter',
     after = function()
       local ai = require('mini.ai')

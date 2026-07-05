@@ -2,8 +2,6 @@ U = require('utils')
 
 require('config.options')
 
-if vim.env['NVIM_DEV_MODULE'] then require('config.dev') end
-
 ---@type lze.Config
 vim.g.lze = {
   load = U.packadd,

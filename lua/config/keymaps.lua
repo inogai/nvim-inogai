@@ -46,6 +46,5 @@ wk.add({
   { '<leader>g',  desc = '+[G]it' },
   { '<leader>gl', function() Snacks.lazygit.open() end,        desc = '[L]azygit' },
 
-  { '<leader>ua', '<cmd>Copilot toggle<cr>',                   desc = '[A]I Completions' },
   { '<leader>ui', '<cmd>Inspect<cr>',                          desc = '[I]nspect' },
 })
