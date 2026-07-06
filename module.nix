@@ -45,7 +45,6 @@ inputs:
       snacks-nvim
       todo-comments-nvim
       trouble-nvim
-      vim-wakatime
       which-key-nvim
       yazi-nvim
     ];
@@ -57,8 +56,6 @@ inputs:
     fzf
     git
     tree-sitter
-    pngpaste
-    wakatime-cli
     delta
     lazygit
     nushell

@@ -20,6 +20,5 @@ return {
   { import = 'lze_specs.todo-comments' },
   { import = 'lze_specs.trouble' },
   { import = 'lze_specs.ufo' },
-  { import = 'lze_specs.wakatime' },
   { import = 'lze_specs.yazi' },
 }
