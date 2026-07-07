@@ -26,8 +26,12 @@ vim.opt.listchars =
   { tab = ' ', multispace = '---+', lead = ' ', trail = '·', nbsp = '␣' }
 
 -- Sync clipboard between OS and Neovim.
+-- Use the smart clipboard provider (WSL, Wayland, X11, OSC 52).
 -- Schedule the setting after `UiEnter` because it can increase startup-time.
-vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+  require('config.clipboard').setup()
+end)
 
 -- Indentation and tabs
 vim.opt.expandtab = true -- Use spaces instead of tabs
