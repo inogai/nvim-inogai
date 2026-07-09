@@ -29,6 +29,19 @@ backends.wsl = {
   cache_enabled = true,
 }
 
+backends.win32yank = {
+  name = 'win32yank',
+  copy = {
+    ['+'] = 'win32yank.exe -i --crlf',
+    ['*'] = 'win32yank.exe -i --crlf',
+  },
+  paste = {
+    ['+'] = 'win32yank.exe -o --lf',
+    ['*'] = 'win32yank.exe -o --lf',
+  },
+  cache_enabled = false,
+}
+
 ---Detect the display server / clipboard environment.
 ---Returns nil if no backend should be explicitly configured.
 ---@return string|nil
@@ -59,7 +72,10 @@ function M.setup()
   local provider = M.get_provider(backend)
   if provider then
     vim.g.clipboard = provider
-    vim.notify(string.format('Clipboard: using "%s" backend', provider.name), vim.log.levels.INFO)
+    vim.notify(
+      string.format('Clipboard: using "%s" backend', provider.name),
+      vim.log.levels.INFO
+    )
   else
     vim.notify(
       string.format('Clipboard: unknown backend "%s", falling back to default', backend),
