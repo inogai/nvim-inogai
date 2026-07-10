@@ -33,6 +33,7 @@ inputs:
       grug-far-nvim
       guess-indent-nvim
       img-clip-nvim
+      lazydev-nvim
       mini-nvim
       noice-nvim
       nvim-lint
@@ -59,5 +60,13 @@ inputs:
     delta
     lazygit
     nushell
+
+    # Nix
+    nil
+    nixfmt
+
+    # Lua
+    lua-language-server
+    stylua
   ];
 }

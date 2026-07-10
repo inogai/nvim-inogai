@@ -1,0 +1,5 @@
+vim.lsp.enable('nil_ls')
+
+U.set_formatter('nix', { 'nixfmt' })
+
+return {}
