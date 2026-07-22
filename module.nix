@@ -43,6 +43,7 @@ inputs:
       nvim-ufo
       persistence-nvim
       rainbow-delimiters-nvim
+      render-markdown-nvim
       snacks-nvim
       todo-comments-nvim
       trouble-nvim

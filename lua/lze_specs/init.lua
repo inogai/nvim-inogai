@@ -18,6 +18,7 @@ return {
   { import = 'lze_specs.nix' },
   { import = 'lze_specs.noice' },
   { import = 'lze_specs.rainbow-delimeters' },
+  { import = 'lze_specs.render-markdown' },
   { import = 'lze_specs.snacks' },
   { import = 'lze_specs.todo-comments' },
   { import = 'lze_specs.trouble' },
